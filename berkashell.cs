@@ -26,6 +26,38 @@ class berkaShell
             string input = Console.ReadLine();
             string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
+            if(parts.Length >= 4&& parts[0]=="Move")
+            {
+                string type = parts[1];
+                string target = parts[2];
+                string targetpath = parts[3];
+                if (type == "File"&&File.Exists(target))
+                {
+                    string destFile = Path.Combine(targetpath, Path.GetFileName(target));
+                    File.Move(target, destFile);
+                    Console.WriteLine("File moved successfully!");
+                }
+                else if (type == "Folder"&&Directory.Exists(target))
+                {
+                    string destDir = Path.Combine(targetpath, Path.GetFileName(target));
+                    Directory.Move(target, destDir);
+                    Console.WriteLine("Folder moved successfully!");
+                }
+            }
+            if(input == "Help")
+            {
+                Console.WriteLine("Available Commands:");
+                Console.WriteLine("New File <Name> [Path] - Creates a new file with the specified name. Optionally, you can provide a path to create the file in a specific directory.");
+                Console.WriteLine("New Folder <Name> [Path] - Creates a new folder with the specified name. Optionally, you can provide a path to create the folder in a specific directory.");
+                Console.WriteLine("Delete File <Path> - Deletes the specified file.");
+                Console.WriteLine("Delete Folder <Path> - Deletes the specified folder and its contents.");
+                Console.WriteLine("Goto <Path> - Changes the current directory to the specified path.");
+                Console.WriteLine("Clear - Clears the console screen.");
+                Console.WriteLine("Exit - Exits BerkaShell.");
+                Console.WriteLine("Move File <SourcePath> <DestinationPath> - Moves a file from the source path to the destination path.");
+                Console.WriteLine("Move Folder <SourcePath> <DestinationPath> - Moves a folder from the source path to the destination path.");
+            }
+
             if (parts.Length >= 3 && parts[0] == "New")
             {
                 string type = parts[1];
