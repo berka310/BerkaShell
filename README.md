@@ -1,12 +1,14 @@
 # BerkaShell
-It's a .NET Console Shell with C# and It!s my first GitHub Repo
-You can use some commands:
-1.New (Name) (File/Folder) (Optional Path) You can create files or folders using that command
-2.Delete (Path) You can delete folders or filest using that command
-3.Exit Close console
-4.Goto You can change your directory like cd command
-5.Clear Clears console screen
-6.Move (File/Folder) (Target object) (Target directory) Change directory of a folder of file
-7.Help Print all commands tasks
-But It's my first shell project so it can crash.
-I want to add more commands like List, Rename, Copy, Paste.
+It's a Terminal Shell writed with C++ 
+There are 10 commands in this shell
+1.delete (path) Deletes folders or files
+2.rename (source) (target) Renames folders or files
+3.move (source) (target) Moves folders or files
+4.exit Closes terminal
+5.clear Clears terminal screen
+6.list (path) Lists folders
+7.run (path) Runs programs
+8.goto (path) Changes directory
+9.help Lists all commands
+10.new (type) (name) (path) Create folders or files
+Welcome to the BerkaShell!
